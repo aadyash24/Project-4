@@ -71,7 +71,29 @@ int main(int argc, char *argv[]) {
     dist[startRow][startCol] = 0;
     pq.push(Node(startRow, startCol, 0));
 
-    
+    //define arrays for adjacent moves (up, down, left, right).
+    int dR[4] = {-1, 1, 0, 0};   //changes in row
+    int dC[4] = {0, 0, -1, 1};   //changes in column
+
+    while (!pq.empty()) {
+        //node with the smallest accumulated cost.
+        Node current = pq.top();
+        pq.pop();
+
+        int r = current.row
+        int c = current.col
+        int currentCost = current.cost;
+
+        //if a shorter path to the node is foung before, skip the iteration
+        if (currentCost > dist[r][c]) {
+            continue;
+        }
+
+        //if destination is reached, break out of loop
+        if (r == endRow && c == endCol) {
+            break;
+        }
+    }
 
 }
 
