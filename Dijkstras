@@ -8,3 +8,9 @@
 
 using namespace std;
 
+struct Node {
+    int row
+    int col
+    int cost;
+
+};
