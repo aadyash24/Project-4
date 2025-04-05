@@ -3,14 +3,85 @@
 #include <string>
 #include <map>
 #include <queue>
-#include <limits>
 #include <algorithm>
 
 using namespace std;
 
+//node structure representing a cell in the grid.
 struct Node {
     int row
     int col
     int cost;
 
+    Node(int r, int c, int cost) {
+        row = r;
+        col = c;
+        this->cost = cost;
+    }
 };
+
+//return true if a's cost is greater than b's cost so that the lowest cost is given highest priority.
+struct CompareNode {
+    bool operator()(const Node &a, const Node &b) {
+        if (a.cost > b.cost) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
+};
+
+int main(int argc, char *argv[]) {
+    //read the number of tile types and their costs.
+    int numTiles;
+    cin >> numTiles;
+    map<string, int> tileCost;
+    for (int i = 0; i < numTiles; i++) {
+        string tile;
+        int cost;
+        cin >> tile >> cost;
+        tileCost[tile] = cost;
+    }
+
+    //read map dimensions.
+    int rows, cols;
+    cin >> rows >> cols;
+
+    //read grid to look for each cell's symbol
+    vector<vector<string>> grid(rows, vector<string>(cols));
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+            cin >> grid[i][j];
+        }
+    }
+
+    //read the runner's starting and ending coordinates.
+    int startRow, startCol, endRow, endCol;
+    cin >> startRow >> startCol;
+    cin >> endRow >> endCol;
+
+    //initialiaze dijkstras
+
+    vector<vector<int>> dist(rows, vector<int>(cols, INF));
+
+    priority_queue<Node, vector<Node>, CompareNode> pq;
+
+    //set the starting cell's distance to 0 since the cost to reach it is zero.
+    dist[startRow][startCol] = 0;
+    pq.push(Node(startRow, startCol, 0));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
