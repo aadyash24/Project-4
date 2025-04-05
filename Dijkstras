@@ -95,16 +95,24 @@ int main(int argc, char *argv[]) {
         }
 
         for (int i = 0; i < 4; i++) {
-            int nr = r + dR[i], nc = c + dC[i]; //calculate neighbor's row and column
+            //calculate neighbor's row and column
+            int neighbor = r + dR[i], nc = c + dC[i];
+
             //ensure neighbor is with in bounds. 
-            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols) {
+            if (neighbor >= 0 && neighbor < rows && nc >= 0 && nc < cols) {
                 //current cost plus the cost of leaving the current cell - this will bet the new cost
                 int newCost = currentCost + tileCost[grid[r][c]];
+
                 //if the new cost is lower than the current recorded cost for the neighbor, then
-                if (newCost < dist[nr][nc]) {
-                    dist[nr][nc] = newCost;  //update the neighbor's distance
-                    prev[nr][nc] = {r, c};   //set the current cell as the predecessor
-                    pq.push(Node(nr, nc, newCost)); //push neighbor into the priority queue
+                if (newCost < dist[neighbor][nc]) {
+                    //update the neighbor's distance
+                    dist[neighbor][nc] = newCost;
+
+                    //set the current cell as the predecessor
+                    prev[neighbor][nc] = {r, c};
+
+                    //push neighbor into the priority queue
+                    pq.push(Node(neighbor, nc, newCost));
                 }
             }
         }
