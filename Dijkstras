@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
     cin >> startRow >> startCol;
     cin >> endRow >> endCol;
 
-    //initialiaze dijkstras
+    //dijkstras setup
 
     vector<vector<int>> dist(rows, vector<int>(cols, INF));
 
@@ -70,6 +70,8 @@ int main(int argc, char *argv[]) {
     //set the starting cell's distance to 0 since the cost to reach it is zero.
     dist[startRow][startCol] = 0;
     pq.push(Node(startRow, startCol, 0));
+
+    
 
 }
 
