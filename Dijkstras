@@ -114,7 +114,7 @@ int main(int argc, char *argv[]) {
                     dist[neighbor][nc] = newCost;
 
                     //set the current cell as the predecessor of the neighbor
-                    parent[{nr, nc}] = {r, c};
+                    parent[{neighbor, nc}] = {r, c};
 
                     //push neighbor into priority queue
                     pq.push(Node(neighbor, nc, newCost));
@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
 
     if (dist[endRow][endCol] == INF) {
         cout << "No path found" << endl;
-        break;
+        return 0;
     }
 
     return 0;
