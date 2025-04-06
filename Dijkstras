@@ -9,8 +9,8 @@ using namespace std;
 
 //node structure representing a cell in the grid.
 struct Node {
-    int row
-    int col
+    int row;
+    int col;
     int cost;
 
     Node(int r, int c, int cost) {
