@@ -123,6 +123,16 @@ int main(int argc, char *argv[]) {
         }
     }
 
+//Reconstruct path by walking backwards from (endRow, endCol) via prev
+    //    (not shown, but you'd do something like:)
+    // vector<pair<int,int>> path;
+    // for (pair<int,int> at = {endRow, endCol}; ; ) {
+    //     path.push_back(at);
+    //     if (at.first == startRow && at.second == startCol) break;
+    //     at = prev[at]; // step to predecessor
+    // }
+    // reverse(path.begin(), path.end());
+    // // Print path or do whatever you need.
     if (dist[endRow][endCol] == INF) {
         cout << "No path found" << endl;
         return 0;
