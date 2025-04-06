@@ -111,7 +111,7 @@ int main(int argc, char *argv[]) {
                     //set the current cell as the predecessor
                     prev[neighbor][nc] = {r, c};
 
-                    //push neighbor into the priority queue
+                    //push neighbor into priority queue
                     pq.push(Node(neighbor, nc, newCost));
                 }
             }
