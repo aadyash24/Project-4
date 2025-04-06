@@ -82,11 +82,6 @@ int main(int argc, char *argv[]) {
 
         int r = current.row;
         int c = current.col;
-
-
-
-
-
         int currentCost = current.cost;
 
         //if a shorter path to the node is foung before, skip the iteration
@@ -101,8 +96,7 @@ int main(int argc, char *argv[]) {
 
         for (int i = 0; i < 4; i++) {
             //calculate neighbor's row and column
-            int neighbor = r + dR[i]
-            int nc = c + dC[i];
+            int neighbor = r + dR[i], nc = c + dC[i];
 
             //ensure neighbor is with in bounds. 
             if (neighbor >= 0 && neighbor < rows && nc >= 0 && nc < cols) {
