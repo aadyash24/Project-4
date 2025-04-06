@@ -4,6 +4,7 @@
 #include <map>
 #include <queue>
 #include <algorithm>
+#include <limits>
 
 using namespace std;
 
@@ -34,6 +35,8 @@ struct CompareNode {
 
 int main(int argc, char *argv[]) {
     //read the number of tile types and their costs.
+
+ static const int INF = numeric_limits<int>::max();
     int numTiles;
     cin >> numTiles;
     map<string, int> tileCost;
