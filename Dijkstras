@@ -118,8 +118,26 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    
+    if (dist[endRow][endCol] == INF) {
+        cout << "No path found" << endl;
+        return 0;
+    }
 
+    //store path from the destination back to the start
+    vector<pair<int, int>> path;
+    
+    //start from the destination cell
+    int r = endRow, c = endCol;
+    
+    //backtrack using the table until the starting cell is reached
+    while (!(r == startRow && c == startCol)) {
+        path.push_back({r, c});
+        auto p = prev[r][c];
+        r = p.first;               
+        c = p.second;            
+    }
+
+    return 0;
 }
 
 
