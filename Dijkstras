@@ -80,8 +80,13 @@ int main(int argc, char *argv[]) {
         Node current = pq.top();
         pq.pop();
 
-        int r = current.row
-        int c = current.col
+        int r = current.row;
+        int c = current.col;
+
+
+
+
+
         int currentCost = current.cost;
 
         //if a shorter path to the node is foung before, skip the iteration
@@ -128,7 +133,7 @@ int main(int argc, char *argv[]) {
     vector<pair<int, int>> path;
     
     //start from the destination cell
-    int r = endRow
+    int r = endRow;
     int c = endCol;
     
     //backtrack using the table until the starting cell is reached
