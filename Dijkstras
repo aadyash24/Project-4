@@ -74,6 +74,8 @@ int main(int argc, char *argv[]) {
     dist[startRow][startCol] = 0;
     pq.push(Node(startRow, startCol, 0));
 
+    map<pair<int, int>, pair<int, int>> parent;
+
     //define arrays for adjacent moves (up, down, left, right).
     int dR[4] = {-1, 1, 0, 0};   //changes in row
     int dC[4] = {0, 0, -1, 1};   //changes in column
@@ -112,7 +114,7 @@ int main(int argc, char *argv[]) {
                     dist[neighbor][nc] = newCost;
 
                     //set the current cell as the predecessor of the neighbor
-                    prev[neighbor][nc] = {r, c};
+                    parent[{nr, nc}] = {r, c};
 
                     //push neighbor into priority queue
                     pq.push(Node(neighbor, nc, newCost));
