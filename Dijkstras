@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
 
     if (dist[endRow][endCol] == INF) {
         cout << "No path found" << endl;
-        return 0;
+        break;
     }
 
     return 0;
