@@ -60,7 +60,10 @@ int main(int argc, char *argv[]) {
     }
 
     //read the runner's starting and ending coordinates.
-    int startRow, startCol, endRow, endCol;
+    int startRow;
+    int startCol;
+    int endRow;
+    int endCol;
     cin >> startRow >> startCol;
     cin >> endRow >> endCol;
 
@@ -131,6 +134,10 @@ int main(int argc, char *argv[]) {
     vector<pair<int, int>> path;
     pair<int, int> current = {endRow, endCol};
 
+    while (!(current.first = startRow && current.second = startCol)) {
+    
+
+    }
     return 0;
 }
 
